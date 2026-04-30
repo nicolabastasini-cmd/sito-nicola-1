@@ -1,0 +1,100 @@
+# ISTRUZIONI — SITO NICOLA BASTASINI
+## Come mettere online il sito e usare il pannello di gestione
+
+---
+
+## PASSO 1 — Crea un account GitHub (gratis)
+
+1. Vai su: https://github.com
+2. Clicca "Sign up"
+3. Inserisci email, password e un username (es: nicolabastasini)
+4. Conferma l'email
+
+---
+
+## PASSO 2 — Carica il sito su GitHub
+
+1. Vai su: https://github.com/new
+2. Nome repository: sito-nicola (o come vuoi)
+3. Spunta "Public"
+4. Clicca "Create repository"
+5. Nella pagina che si apre, clicca "uploading an existing file"
+6. Seleziona TUTTI i file della cartella sito-nicola e trascinali
+7. Clicca "Commit changes"
+
+---
+
+## PASSO 3 — Collega Netlify (gratis)
+
+1. Vai su: https://netlify.com
+2. Clicca "Sign up" → scegli "GitHub"
+3. Autorizza Netlify ad accedere a GitHub
+4. Clicca "Add new site" → "Import an existing project"
+5. Seleziona il tuo repository sito-nicola
+6. Lascia tutto com'è e clicca "Deploy site"
+7. Attendi 1 minuto → il tuo sito è ONLINE
+
+---
+
+## PASSO 4 — Attiva il pannello di gestione (CMS)
+
+Una volta che il sito è online su Netlify:
+
+1. Vai su Netlify → il tuo sito → "Site configuration"
+2. Cerca "Identity" nel menu a sinistra
+3. Clicca "Enable Identity"
+4. Vai su "Services" → "Git Gateway" → clicca "Enable Git Gateway"
+5. Torna su "Identity" → "Invite users" → inserisci la tua email
+6. Controlla la tua email e clicca il link di conferma
+7. Scegli una password
+
+Fatto. Il pannello è attivo.
+
+---
+
+## PASSO 5 — Entra nel pannello e inizia a modificare
+
+1. Vai su: https://tuosito.netlify.app/admin
+   (sostituisci "tuosito" con il nome che ti ha dato Netlify)
+2. Inserisci la tua email e password
+3. Sei dentro!
+
+---
+
+## COSA PUOI FARE DAL PANNELLO
+
+### 📝 Scrivere un articolo del blog
+1. Clicca "Articoli Blog" nel menu a sinistra
+2. Clicca "New Articolo"
+3. Scrivi titolo, scegli categoria, carica foto, scrivi il testo
+4. Clicca "Publish"
+5. Il sito si aggiorna automaticamente in 1-2 minuti
+
+### 📸 Caricare foto
+Quando sei dentro un articolo o una pagina, clicca il pulsante immagine nell'editor e carica la foto dal tuo computer.
+
+### 💰 Aggiornare prezzi e percorsi
+Vai su "Percorsi" nel menu → seleziona il percorso → modifica il prezzo → Salva.
+
+### 📅 Aggiornare il calendario corsi
+Vai su "Calendario Corsi" → "Orario settimanale" → modifica i giorni → Salva.
+
+### 📞 Aggiornare i contatti
+Vai su "Informazioni contatto" → inserisci il tuo numero WhatsApp, email, Instagram → Salva.
+
+---
+
+## COLLEGARE IL DOMINIO PERSONALIZZATO (es: nicolabastasini.it)
+
+1. Compra il dominio su Aruba o Register.it (costa circa 15€/anno)
+2. Su Netlify → "Domain management" → "Add custom domain"
+3. Inserisci il tuo dominio
+4. Netlify ti dice quali DNS configurare
+5. Vai nel pannello del tuo registrar (Aruba ecc.) e aggiorna i DNS
+6. Attendi 24-48 ore → il sito risponde sul tuo dominio
+
+---
+
+## PER QUALSIASI PROBLEMA
+
+Scrivimi e sistemiamo insieme.

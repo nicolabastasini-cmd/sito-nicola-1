@@ -1,0 +1,184 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Dove vengono salvate le immagini caricate
+media_folder: "uploads"
+public_folder: "/uploads"
+
+# Lingua italiana nell'interfaccia
+locale: it
+
+collections:
+
+  # ─── BLOG ─────────────────────────────────────────────────────────────
+  - name: "blog"
+    label: "📝 Articoli Blog"
+    label_singular: "Articolo"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    media_folder: "/uploads"
+    public_folder: "/uploads"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Data pubblicazione", name: "date", widget: "datetime", date_format: "DD/MM/YYYY", time_format: false }
+      - label: "Categoria"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Corpo", value: "corpo" }
+          - { label: "Movimento", value: "movimento" }
+          - { label: "Mente", value: "mente" }
+          - { label: "Nutrizione", value: "nutrizione" }
+          - { label: "Osteopatia", value: "corpo" }
+          - { label: "Postura", value: "corpo" }
+          - { label: "PSYCH-K", value: "mente" }
+          - { label: "Fitness", value: "movimento" }
+      - { label: "Immagine copertina", name: "image", widget: "image", required: false }
+      - { label: "Descrizione breve (max 160 caratteri)", name: "excerpt", widget: "string" }
+      - { label: "Contenuto articolo", name: "body", widget: "markdown" }
+      - { label: "Pubblica", name: "published", widget: "boolean", default: true }
+
+  # ─── PAGINE PRINCIPALI ────────────────────────────────────────────────
+  - name: "pagine"
+    label: "📄 Pagine del sito"
+    files:
+
+      - label: "Home — testi principali"
+        name: "home"
+        file: "_data/home.json"
+        fields:
+          - { label: "Frase principale (h1)", name: "headline", widget: "string", default: "Corpo. Mente. Trasformazione." }
+          - { label: "Testo introduttivo", name: "lead", widget: "text" }
+          - { label: "Frase statistica 1 - numero", name: "stat1_num", widget: "string", default: "26" }
+          - { label: "Frase statistica 1 - etichetta", name: "stat1_label", widget: "string", default: "anni di esperienza" }
+          - { label: "Testo sezione sistema", name: "sistema_testo", widget: "text" }
+
+      - label: "Chi sono — testo"
+        name: "chisono"
+        file: "_data/chisono.json"
+        fields:
+          - { label: "Titolo principale", name: "title", widget: "string", default: "Nicola Bastasini" }
+          - { label: "Sottotitolo hero", name: "subtitle", widget: "text" }
+          - { label: "Storia (paragrafo 1)", name: "storia1", widget: "text" }
+          - { label: "Storia (paragrafo 2)", name: "storia2", widget: "text" }
+          - { label: "Storia (paragrafo 3)", name: "storia3", widget: "text" }
+          - { label: "Citazione personale", name: "quote", widget: "string" }
+
+      - label: "Osteopatia — testo"
+        name: "osteopatia"
+        file: "_data/osteopatia.json"
+        fields:
+          - { label: "Titolo hero", name: "title", widget: "string", default: "Osteopatia" }
+          - { label: "Testo introduttivo", name: "intro", widget: "text" }
+          - { label: "Come lavoro (paragrafo 1)", name: "lavoro1", widget: "text" }
+          - { label: "Come lavoro (paragrafo 2)", name: "lavoro2", widget: "text" }
+          - { label: "Prima seduta — descrizione", name: "prima_seduta", widget: "text" }
+          - { label: "Durata e frequenza", name: "durata", widget: "text" }
+
+      - label: "PSYCH-K — testo"
+        name: "psychk"
+        file: "_data/psychk.json"
+        fields:
+          - { label: "Titolo hero", name: "title", widget: "string", default: "PSYCH-K" }
+          - { label: "Testo introduttivo", name: "intro", widget: "text" }
+          - { label: "Come funziona (paragrafo 1)", name: "come1", widget: "text" }
+          - { label: "Come funziona (paragrafo 2)", name: "come2", widget: "text" }
+          - { label: "Anni di pratica", name: "anni", widget: "string", default: "9" }
+
+  # ─── PERCORSI ─────────────────────────────────────────────────────────
+  - name: "percorsi"
+    label: "🛤 Percorsi"
+    label_singular: "Percorso"
+    folder: "_percorsi"
+    create: true
+    fields:
+      - { label: "Nome percorso", name: "title", widget: "string" }
+      - { label: "Durata", name: "durata", widget: "string", hint: "Es: 4–8 settimane" }
+      - { label: "Descrizione breve", name: "descrizione", widget: "string" }
+      - { label: "Prezzo", name: "prezzo", widget: "string", hint: "Es: 320€" }
+      - { label: "Cosa include", name: "include", widget: "list", label_singular: "Voce", field: { label: "Voce", name: "voce", widget: "string" } }
+      - { label: "Percorso premium (oro)", name: "premium", widget: "boolean", default: false }
+      - { label: "Ordine di visualizzazione", name: "ordine", widget: "number", default: 1 }
+
+  # ─── ABBONAMENTI ──────────────────────────────────────────────────────
+  - name: "abbonamenti"
+    label: "💳 Abbonamenti"
+    label_singular: "Abbonamento"
+    folder: "_abbonamenti"
+    create: true
+    fields:
+      - { label: "Nome piano", name: "title", widget: "string" }
+      - { label: "Descrizione breve", name: "descrizione", widget: "string" }
+      - { label: "Prezzo mensile (€)", name: "prezzo", widget: "number" }
+      - { label: "In evidenza", name: "featured", widget: "boolean", default: false }
+      - { label: "Link acquisto (Ko-fi/PayPal)", name: "link", widget: "string" }
+      - { label: "Cosa include", name: "include", widget: "list", label_singular: "Voce", field: { label: "Voce", name: "voce", widget: "string" } }
+      - { label: "Ordine", name: "ordine", widget: "number", default: 1 }
+
+  # ─── SHOP PRODOTTI ─────────────────────────────────────────────────────
+  - name: "prodotti"
+    label: "🛒 Prodotti Shop"
+    label_singular: "Prodotto"
+    folder: "_prodotti"
+    create: true
+    fields:
+      - { label: "Nome prodotto", name: "title", widget: "string" }
+      - label: "Categoria"
+        name: "categoria"
+        widget: "select"
+        options:
+          - { label: "Programmi digitali", value: "digitale" }
+          - { label: "Integratori", value: "integratori" }
+          - { label: "Merchandising", value: "merch" }
+      - { label: "Descrizione breve", name: "descrizione", widget: "string" }
+      - { label: "Prezzo (€)", name: "prezzo", widget: "number" }
+      - { label: "Emoji icona (es: 📋)", name: "emoji", widget: "string", default: "📦" }
+      - { label: "Link acquisto", name: "link", widget: "string", required: false }
+      - { label: "Disponibile", name: "disponibile", widget: "boolean", default: true }
+
+  # ─── CORSI LIVE / CALENDARIO ──────────────────────────────────────────
+  - name: "calendario"
+    label: "📅 Calendario Corsi"
+    files:
+      - label: "Orario settimanale"
+        name: "orario"
+        file: "_data/orario.json"
+        fields:
+          - label: "Lezioni"
+            name: "lezioni"
+            widget: "list"
+            label_singular: "Lezione"
+            fields:
+              - label: "Giorno"
+                name: "giorno"
+                widget: "select"
+                options: ["Lunedì","Martedì","Mercoledì","Giovedì","Venerdì","Sabato","Domenica"]
+              - { label: "Corso", name: "corso", widget: "string" }
+              - { label: "Orario", name: "orario", widget: "string", hint: "Es: 18:30 – 19:30" }
+              - { label: "Link YouTube (diretta)", name: "link", widget: "string", required: false }
+
+      - label: "ID canale YouTube"
+        name: "youtube"
+        file: "_data/youtube.json"
+        fields:
+          - { label: "ID canale YouTube", name: "channel_id", widget: "string", hint: "Trovalo su YouTube Studio → Impostazioni → Canale → Informazioni avanzate" }
+          - { label: "Testo sotto il video", name: "testo", widget: "string" }
+
+  # ─── INFORMAZIONI DI CONTATTO ─────────────────────────────────────────
+  - name: "contatti"
+    label: "📞 Informazioni contatto"
+    files:
+      - label: "Dati di contatto"
+        name: "info"
+        file: "_data/contatti.json"
+        fields:
+          - { label: "Numero WhatsApp (con prefisso, es: 393331234567)", name: "whatsapp", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Instagram (username)", name: "instagram", widget: "string" }
+          - { label: "YouTube (URL canale)", name: "youtube", widget: "string" }
+          - { label: "Indirizzo studio", name: "indirizzo", widget: "string", default: "Negrar di Valpolicella (VR)" }
+          - { label: "Orari Lun-Ven mattina", name: "orario_mattina", widget: "string", default: "9:00 – 13:00" }
+          - { label: "Orari Lun-Ven pomeriggio", name: "orario_pomeriggio", widget: "string", default: "15:00 – 19:00" }
+          - { label: "Orari Sabato", name: "orario_sabato", widget: "string", default: "9:00 – 12:00" }

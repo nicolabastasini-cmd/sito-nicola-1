@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contatti — Nicola Bastasini</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="tag">Contatti</span>
+    <h1>Iniziamo<br>a parlare</h1>
+    <p class="lead" style="max-width:580px;">Non serve sapere già quale percorso scegliere. Scrivimi cosa senti nel corpo, cosa vuoi cambiare e dove sei adesso. Partiamo da lì.</p>
+  </div>
+</section>
+
+<section class="section band-white">
+  <div class="container">
+    <div class="two-col">
+
+      <!-- Modulo -->
+      <div>
+        <span class="tag">Scrivimi</span>
+        <h2>Modulo di contatto</h2>
+        <div class="divider"></div>
+        <form id="contactForm" onsubmit="handleForm(event)">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Nome *</label>
+              <input class="form-input" type="text" placeholder="Il tuo nome" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Cognome *</label>
+              <input class="form-input" type="text" placeholder="Il tuo cognome" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email *</label>
+            <input class="form-input" type="email" placeholder="la.tua@email.com" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Telefono / WhatsApp</label>
+            <input class="form-input" type="tel" placeholder="+39 333 000 0000"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Cosa ti interessa?</label>
+            <select class="form-select">
+              <option value="">Seleziona un'area</option>
+              <option>Osteopatia</option>
+              <option>Postura & Mézières</option>
+              <option>PSYCH-K</option>
+              <option>Fitness & Allenamento</option>
+              <option>Corsi Live Online</option>
+              <option>Percorso Rinascita Consapevole</option>
+              <option>Abbonamento</option>
+              <option>Informazioni generali</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Raccontami di te</label>
+            <textarea class="form-textarea" placeholder="Cosa ti porta qui? Cosa senti nel corpo, cosa vorresti cambiare, dove sei adesso..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Invia messaggio →</button>
+        </form>
+        <div id="formSuccess" style="display:none;background:var(--green-soft);border:1px solid var(--green);border-radius:var(--radius);padding:24px;margin-top:20px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:10px;">✅</div>
+          <strong style="color:var(--green);">Messaggio inviato!</strong>
+          <p style="margin-top:8px;font-size:.9rem;">Ti rispondo entro 24 ore, spesso prima.</p>
+        </div>
+      </div>
+
+      <!-- Contatti diretti -->
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div class="card">
+          <div class="card-icon">💬</div>
+          <h3>WhatsApp</h3>
+          <p>Il modo più rapido per scrivermi. Rispondo personalmente, di solito entro poche ore.</p>
+          <a href="https://wa.me/39ILTUONUMERO" target="_blank" class="btn btn-primary" style="margin-top:20px;font-size:.9rem;">Apri su WhatsApp</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">📍</div>
+          <h3>Studio</h3>
+          <p><strong>Negrar di Valpolicella (VR)</strong><br/>Indirizzo completo disponibile su appuntamento.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📸</div>
+          <h3>Instagram</h3>
+          <p>Contenuti quotidiani su corpo, postura, movimento e trasformazione personale.</p>
+          <a href="https://instagram.com/nicolabastasini" target="_blank" class="btn btn-outline" style="margin-top:20px;font-size:.9rem;">Seguimi →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">▶</div>
+          <h3>YouTube</h3>
+          <p>Video formativi, corsi live e replay. Iscriviti per non perdere le dirette.</p>
+          <a href="https://youtube.com/@nicolabastasini" target="_blank" class="btn btn-outline" style="margin-top:20px;font-size:.9rem;">Iscriviti →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section band-cream">
+  <div class="container container-sm">
+    <div class="section-header">
+      <span class="tag">Orari</span>
+      <h2>Quando sono disponibile</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+      <div class="card" style="text-align:center;padding:28px;">
+        <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:8px;">Lun – Ven</div>
+        <div style="font-family:var(--font-display);font-size:1.5rem;color:var(--green);">9:00 – 13:00</div>
+        <div style="font-family:var(--font-display);font-size:1.5rem;color:var(--green);">15:00 – 19:00</div>
+      </div>
+      <div class="card" style="text-align:center;padding:28px;">
+        <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:8px;">Sabato</div>
+        <div style="font-family:var(--font-display);font-size:1.5rem;color:var(--green);">9:00 – 12:00</div>
+        <div style="font-size:.85rem;color:var(--muted);margin-top:6px;">Solo su appuntamento</div>
+      </div>
+      <div class="card" style="text-align:center;padding:28px;">
+        <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:8px;">Online</div>
+        <div style="font-family:var(--font-display);font-size:1.5rem;color:var(--green);">Flessibile</div>
+        <div style="font-size:.85rem;color:var(--muted);margin-top:6px;">PSYCH-K e consulenze via video</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="nav.js"></script>
+<script>
+function handleForm(e){
+  e.preventDefault();
+  document.getElementById('contactForm').style.display='none';
+  document.getElementById('formSuccess').style.display='block';
+}
+</script>
+</body>
+</html>
