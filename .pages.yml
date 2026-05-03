@@ -1,0 +1,90 @@
+content:
+  - name: home
+    label: Home
+    type: file
+    path: index.html
+    format: code
+
+  - name: chi_sono
+    label: Chi sono
+    type: file
+    path: chi-sono.html
+    format: code
+
+  - name: metodo
+    label: Metodo
+    type: file
+    path: metodo.html
+    format: code
+
+  - name: osteopatia
+    label: Osteopatia
+    type: file
+    path: osteopatia.html
+    format: code
+
+  - name: postura
+    label: Postura
+    type: file
+    path: postura.html
+    format: code
+
+  - name: psych_k
+    label: PSYCH-K
+    type: file
+    path: psych-k.html
+    format: code
+
+  - name: fitness
+    label: Fitness
+    type: file
+    path: fitness.html
+    format: code
+
+  - name: percorsi
+    label: Percorsi
+    type: file
+    path: percorsi.html
+    format: code
+
+  - name: abbonamenti
+    label: Abbonamenti
+    type: file
+    path: abbonamenti.html
+    format: code
+
+  - name: shop
+    label: Shop
+    type: file
+    path: shop.html
+    format: code
+
+  - name: corsi_live
+    label: Corsi Live
+    type: file
+    path: corsi-live.html
+    format: code
+
+  - name: contatti
+    label: Contatti
+    type: file
+    path: contatti.html
+    format: code
+
+  - name: blog
+    label: Blog
+    type: file
+    path: blog.html
+    format: code
+
+  - name: stile
+    label: Stile grafico
+    type: file
+    path: style.css
+    format: code
+
+  - name: navigazione
+    label: Menu navigazione
+    type: file
+    path: nav.js
+    format: code
